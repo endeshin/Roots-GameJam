@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dv3wrv4gbqk5p"]
+
+[ext_resource type="Script" uid="uid://dlxve8vr6u3gv" path="res://scripts/game/logic.gd" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://d0wgowu878mki" path="res://scenes/actors/player.tscn" id="2_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://b1e1ptwueocr1" path="res://assets/animation_source/main_bg/jk1.png" id="2_tbgi4"]
+[ext_resource type="Texture2D" uid="uid://brgtwfvn40h1s" path="res://assets/animation_source/main_bg/jk2.png" id="3_tefeu"]
+[ext_resource type="Texture2D" uid="uid://danux5yfsablj" path="res://assets/animation_source/main_bg/jk.png" id="4_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://duuwiadpr8f0x" path="res://scenes/pause_menu.tscn" id="6_tefeu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suk2g"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("2_tbgi4")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_tefeu")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_o6xl0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Main" type="Node2D" unique_id=558823597]
+process_mode = 1
+process_priority = -1
+script = ExtResource("1_o5qli")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2039054747]
+position = Vector2(1020, 689)
+sprite_frames = SubResource("SpriteFrames_suk2g")
+frame_progress = 0.15516146
+
+[node name="Player" parent="." unique_id=1514487963 instance=ExtResource("2_0wfyh")]
+position = Vector2(590, 605)
+
+[node name="spawner" type="Node2D" parent="." unique_id=1914675509]
+position = Vector2(576, 324)
+
+[node name="waveTimer" type="Timer" parent="." unique_id=1941907373]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="gameTimer" type="Timer" parent="." unique_id=446617055]
+wait_time = 150.0
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1932879902]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=901960189 instance=ExtResource("6_tefeu")]
+
+[connection signal="timeout" from="waveTimer" to="." method="_on_wave_timer_timeout"]
+[connection signal="timeout" from="gameTimer" to="." method="_on_game_timer_timeout"]

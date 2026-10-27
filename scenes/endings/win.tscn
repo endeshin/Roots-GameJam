@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://b5hsdbdq68jla"]
+
+[ext_resource type="Script" uid="uid://c033jjf3p5awp" path="res://scripts/menu/ending.gd" id="1_evveu"]
+[ext_resource type="Texture2D" uid="uid://w5s82wt137hf" path="res://assets/animation_source/main_menu/frame1.png" id="2_86ccg"]
+[ext_resource type="FontFile" uid="uid://btjpkv8giqdel" path="res://assets/Silkscreen-Regular.ttf" id="2_qjtmr"]
+[ext_resource type="Texture2D" uid="uid://b674d45s0il23" path="res://assets/animation_source/main_menu/frame2.png" id="3_rvcm7"]
+[ext_resource type="Texture2D" uid="uid://d3cv3d8wqt1s8" path="res://assets/animation_source/main_menu/Timeline 1_0000.png" id="4_yxww1"]
+[ext_resource type="Texture2D" uid="uid://dca3wiko5dsr7" path="res://assets/animation_source/main_menu/Timeline 1_0001.png" id="5_vw2w5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ltb0j"]
+animations = [{
+"frames": [{
+"duration": 3.0,
+"texture": ExtResource("2_86ccg")
+}, {
+"duration": 3.0,
+"texture": ExtResource("3_rvcm7")
+}, {
+"duration": 3.0,
+"texture": ExtResource("4_yxww1")
+}, {
+"duration": 3.0,
+"texture": ExtResource("5_vw2w5")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="Win" type="Control" unique_id=441956730]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_evveu")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=240100185]
+position = Vector2(1023, 692)
+sprite_frames = SubResource("SpriteFrames_ltb0j")
+
+[node name="Label" type="Label" parent="." unique_id=1230455846]
+layout_mode = 0
+offset_left = 845.0
+offset_top = 346.0
+offset_right = 1189.0
+offset_bottom = 438.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_qjtmr")
+theme_override_font_sizes/font_size = 64
+text = "You Win!"
+
+[node name="restart" type="Button" parent="." unique_id=533231973]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 522.0
+offset_right = 1072.0
+offset_bottom = 571.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_qjtmr")
+theme_override_font_sizes/font_size = 32
+text = "> Restart"
+flat = true
+
+[node name="menu" type="Button" parent="." unique_id=1864117972]
+layout_mode = 0
+offset_left = 862.0
+offset_top = 551.0
+offset_right = 1025.0
+offset_bottom = 614.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_qjtmr")
+theme_override_font_sizes/font_size = 32
+text = "> Menu"
+flat = true
+
+[connection signal="pressed" from="restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]

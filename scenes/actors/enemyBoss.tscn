@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dsxdfbo2bao8b"]
+
+[ext_resource type="Texture2D" uid="uid://cyinmy0ju1ev6" path="res://assets/animation_source/boss/Timeline 1_0001.png" id="1_8daav"]
+[ext_resource type="Script" uid="uid://cka3jypv75k6q" path="res://scripts/game/boss.gd" id="1_ct83e"]
+[ext_resource type="Texture2D" uid="uid://e1oxdpj7sdbn" path="res://assets/animation_source/boss/Timeline 1_0002.png" id="2_ct83e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8daav"]
+size = Vector2(538.5, 494.5)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suk2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8daav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ct83e")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyBoss" type="CharacterBody2D" unique_id=1227239335 groups=["Enemy"]]
+script = ExtResource("1_ct83e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=569303251]
+position = Vector2(3.75, -5.250004)
+shape = SubResource("RectangleShape2D_8daav")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2103982666]
+rotation = 4.712389
+sprite_frames = SubResource("SpriteFrames_suk2g")
+frame_progress = 0.013627229
+
+[node name="Node2D" type="Node2D" parent="." unique_id=411555881]
+position = Vector2(345, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1773497396]
+wait_time = 0.5
+one_shot = true
+autostart = true

@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dauul26ik83li"]
+
+[ext_resource type="Script" uid="uid://vnidq2jta5xe" path="res://scripts/game/enemy.gd" id="1_jgpyy"]
+[ext_resource type="Texture2D" uid="uid://cpoxmq7y2o3wc" path="res://assets/animation_source/enemy_basic/pl0.png" id="2_ua6ni"]
+[ext_resource type="Texture2D" uid="uid://bkq6on1erjvkj" path="res://assets/animation_source/enemy_basic/pl1.png" id="3_pq2vb"]
+[ext_resource type="Texture2D" uid="uid://copoiqkojojxs" path="res://assets/animation_source/enemy_basic/pl2.png" id="4_wi42t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1ka0"]
+size = Vector2(132, 129)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suk2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ua6ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_pq2vb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wi42t")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="EnemyBasic" type="CharacterBody2D" unique_id=1033111385]
+script = ExtResource("1_jgpyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=162743200]
+position = Vector2(3, -2.5)
+shape = SubResource("RectangleShape2D_v1ka0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=415930396]
+position = Vector2(-1, -5.000002)
+rotation = 4.712389
+scale = Vector2(0.3333333, 0.3333333)
+sprite_frames = SubResource("SpriteFrames_suk2g")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1353478186]
+position = Vector2(112, 1)
+
+[node name="Timer" type="Timer" parent="." unique_id=1220426812]
+wait_time = 0.5
+one_shot = true
+autostart = true

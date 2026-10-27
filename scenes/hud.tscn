@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://bs010o55024la"]
+
+[ext_resource type="Script" uid="uid://g0bs6epv3bwh" path="res://scripts/menu/hud.gd" id="1_ahhtf"]
+[ext_resource type="FontFile" uid="uid://btjpkv8giqdel" path="res://assets/Silkscreen-Regular.ttf" id="2_oo0fn"]
+
+[node name="hud" type="CanvasLayer" unique_id=1431713768]
+script = ExtResource("1_ahhtf")
+
+[node name="gameTimerLabel" type="Label" parent="." unique_id=829224033]
+offset_left = 882.0
+offset_top = 52.0
+offset_right = 1126.0
+offset_bottom = 134.0
+theme_override_colors/font_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.10980392, 0.2, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 64
+text = "timer"
+horizontal_alignment = 1
+
+[node name="playerHealthLabel" type="Label" parent="." unique_id=927556096]
+offset_left = 1716.0
+offset_top = 1179.0
+offset_right = 1985.0
+offset_bottom = 1343.0
+theme_override_colors/font_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.10980392, 0.2, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 128
+text = "HP"
+horizontal_alignment = 1
+
+[node name="WaveLabel" type="Label" parent="." unique_id=10894455]
+offset_left = 808.0
+offset_top = 235.0
+offset_right = 1224.0
+offset_bottom = 399.0
+theme_override_colors/font_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.10980392, 0.2, 0.06666667, 1)
+theme_override_fonts/font = ExtResource("2_oo0fn")
+theme_override_font_sizes/font_size = 128
+text = "Wave"
+horizontal_alignment = 1

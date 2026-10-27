@@ -1,0 +1,231 @@
+[gd_scene format=3 uid="uid://duuwiadpr8f0x"]
+
+[ext_resource type="Script" uid="uid://n1jd3gggl5kh" path="res://scripts/menu/pause_menu.gd" id="1_n87rw"]
+[ext_resource type="FontFile" uid="uid://btjpkv8giqdel" path="res://assets/Silkscreen-Regular.ttf" id="2_myx47"]
+
+[sub_resource type="Animation" id="Animation_kukqi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resume:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("quit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_myx47"]
+resource_name = "on_screen"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("bg:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("resume:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("menu:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("quit:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Label:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kukqi"]
+_data = {
+&"RESET": SubResource("Animation_kukqi"),
+&"on_screen": SubResource("Animation_myx47")
+}
+
+[node name="PauseMenu" type="Control" unique_id=901960189]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n87rw")
+
+[node name="bg" type="ColorRect" parent="." unique_id=1121703724]
+visible = false
+layout_mode = 0
+offset_left = 681.0
+offset_top = 373.0
+offset_right = 721.97925
+offset_bottom = 402.8385
+scale = Vector2(16.496155, 21.08015)
+color = Color(0.28739208, 0.44625735, 0.14361691, 1)
+
+[node name="resume" type="Button" parent="." unique_id=1988432285]
+visible = false
+layout_mode = 0
+offset_left = 792.0
+offset_top = 461.0
+offset_right = 1152.0
+offset_bottom = 562.3085
+scale = Vector2(1.1961175, 1.1450181)
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_pressed_color = Color(0.7647059, 0.9843137, 0.69803923, 1)
+theme_override_colors/font_hover_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 64
+text = "> Resume"
+flat = true
+
+[node name="menu" type="Button" parent="." unique_id=158629288]
+visible = false
+layout_mode = 0
+offset_left = 797.0
+offset_top = 574.0
+offset_right = 1189.0
+offset_bottom = 699.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_pressed_color = Color(0.7647059, 0.9843137, 0.69803923, 1)
+theme_override_colors/font_hover_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 64
+text = "> Menu"
+flat = true
+
+[node name="quit" type="Button" parent="." unique_id=846264011]
+visible = false
+layout_mode = 0
+offset_left = 798.0
+offset_top = 696.0
+offset_right = 1230.0
+offset_bottom = 823.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_colors/font_focus_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_pressed_color = Color(0.7647059, 0.9843137, 0.69803923, 1)
+theme_override_colors/font_hover_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.5176471, 0.91764706, 0.3764706, 1)
+theme_override_colors/font_outline_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 64
+text = "> Turn OFF"
+flat = true
+
+[node name="Label" type="Label" parent="." unique_id=1400619596]
+visible = false
+layout_mode = 0
+offset_left = 710.0
+offset_top = 941.0
+offset_right = 1074.0
+offset_bottom = 999.0
+theme_override_colors/font_color = Color(0.11372549, 0.22745098, 0.07450981, 1)
+theme_override_fonts/font = ExtResource("2_myx47")
+theme_override_font_sizes/font_size = 32
+text = "Made by Nintendo"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=14750908]
+libraries/ = SubResource("AnimationLibrary_kukqi")
+
+[connection signal="pressed" from="resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

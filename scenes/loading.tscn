@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://br2rwi2v3gb5a"]
+
+[ext_resource type="Script" uid="uid://cb1jcedxq80l5" path="res://scripts/menu/loading.gd" id="1_2b8ay"]
+[ext_resource type="Texture2D" uid="uid://cqqqelvh4kxj" path="res://assets/menu_bg.jpg" id="1_ir5ef"]
+[ext_resource type="Texture2D" uid="uid://cghl606hsp1q5" path="res://assets/animation_source/loading/01.png" id="2_3cqd5"]
+[ext_resource type="Texture2D" uid="uid://2utvggvpm2v4" path="res://assets/animation_source/loading/02.png" id="3_2b8ay"]
+[ext_resource type="Texture2D" uid="uid://cfv4wagq4oo4h" path="res://assets/animation_source/loading/03.png" id="4_mp7cq"]
+[ext_resource type="Texture2D" uid="uid://y1yglmou4aev" path="res://assets/animation_source/loading/04.png" id="5_kc112"]
+[ext_resource type="Texture2D" uid="uid://duaa8wo42amr8" path="res://assets/animation_source/loading/05.png" id="6_4ay1x"]
+[ext_resource type="Texture2D" uid="uid://culejdrlp2l0j" path="res://assets/animation_source/loading/06.png" id="7_pjhx7"]
+[ext_resource type="Texture2D" uid="uid://kqdw8xmgnvho" path="res://assets/animation_source/loading/07.png" id="8_xn74e"]
+[ext_resource type="Texture2D" uid="uid://ce8ruxrayldjp" path="res://assets/animation_source/loading/08.png" id="9_x5boc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suk2g"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3cqd5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_2b8ay")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_mp7cq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kc112")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4ay1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pjhx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xn74e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_x5boc")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Loading" type="Control" unique_id=1520931695]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2b8ay")
+
+[node name="MenuBg" type="Sprite2D" parent="." unique_id=1524103945]
+position = Vector2(1021, 691)
+texture = ExtResource("1_ir5ef")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=743721626]
+position = Vector2(1007.00006, 508)
+scale = Vector2(0.23583327, 0.23583327)
+sprite_frames = SubResource("SpriteFrames_suk2g")
+frame_progress = 0.0056625805
+
+[node name="Timer" type="Timer" parent="." unique_id=1941128733]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
